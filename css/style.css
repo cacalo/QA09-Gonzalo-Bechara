@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    flex-direction: column;
+}
+.form-box{
+    display: flex;
+    align-content: space-between;
+    background-color: #ccc;
+    padding: 50px;
+}
+
+h1{
+    font-weight: 800;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 50px,25px;
+}
+#form-result{
+    display: hidden;
+}
