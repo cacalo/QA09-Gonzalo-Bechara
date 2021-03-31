@@ -10,33 +10,35 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Register Form</h1>
-			<form>
-				<div>
-					<label for="email"><b>Email</b></label>
-					<input type="email" placeholder="Enter Email" name="email" id="email" required>
-				</div>
-				<div>
-					<label for="name"><b>Full Name</b></label>
-					<input type="text" placeholder="Enter Full Name" name="name" id="name" required>
-				</div>
-				<div>
-					<label for="psw"><b>Password</b></label>
-					<input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-				</div>
-				<div>
-					<label for="psw-2"><b>Password</b></label>
-					<input type="password" placeholder="Confirm Password" name="psw-2" id="psw-2" required>
-				</div>
-				<div>
-					<button type="reset">Clear</button>
-					<button type="submit">Register</button>
-				</div>
-			</form>
-			<p>Already have an account? <a href="login.html">Log in</a></p>
-			<div id="form-result">
+			<div class="form-box">
+				<h1>Register Form</h1>
+				<form>
+					<div class="form-item">
+						<label for="email"><b>Email</b></label>
+						<input type="email" placeholder="Enter Email" name="email" id="email" required>
+					</div>
+					<div class="form-item">
+						<label for="name"><b>Full Name</b></label>
+						<input type="text" placeholder="Enter Full Name" name="name" id="name" required>
+					</div>
+					<div class="form-item">
+						<label for="psw"><b>Password</b></label>
+						<input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+					</div>
+					<div class="form-item">
+						<label for="psw-2"><b>Password</b></label>
+						<input type="password" placeholder="Confirm Password" name="psw-2" id="psw-2" required>
+					</div>
+					<div>
+						<button type="reset">Clear</button>
+						<button type="submit">Register</button>
+					</div>
+				</form>
+				<p>Already have an account? <a href="login.html">Log in</a></p>
+				<div id="form-result" class="alert-hidden"></div>
 			</div>
 		</div>
-		<script src="./register.html"></script>
+		<script src="/js/alertBox.js"></script>
+		<script src="/js/register.js"></script>
 	</body>
 </html>
