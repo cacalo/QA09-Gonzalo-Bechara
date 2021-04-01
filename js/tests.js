@@ -23,6 +23,7 @@ function checkFormsFields(form,name,typeCondition,labelCondition,requiredConditi
 	let typeResult;
 	let labelResult;
 	let requiredResult;
+	let errors = false;
 	//items = document.querySelectorAll(form.ID+" .form-item");
 	items = document.querySelectorAll("form .form-item");
 	//For every form item there is
@@ -33,7 +34,7 @@ function checkFormsFields(form,name,typeCondition,labelCondition,requiredConditi
 			const element = item.children[index];
 			console.log(element)
 			console.log(name)
-			if(element.nodeName == "LABEL" && element.for == name){
+			if(element.nodeName == "LABEL" && element.getAttribute("for") == name){
 				labelResult = true;
 			}
 			else if(element.nodeName == "INPUT" && element.name == name){
@@ -45,15 +46,42 @@ function checkFormsFields(form,name,typeCondition,labelCondition,requiredConditi
 	console.log(typeResult, typeCondition, labelResult, labelCondition, requiredResult, requiredCondition);
 	if(typeResult != typeCondition){
 		showProcessResult("The object :"+name+" does not have the right input type. " + typeResult + " is different from " + typeCondition);
+		errors = true;
 	}
 	if(labelResult != labelCondition){
-		showProcessResult("The object :"+name+" does not have a label or it is not in the right place."+ labelResult + labelCondition);
+		showProcessResult("The object :"+name+" does not have a label or it is not in the right place.");
+		errors = true;
 	}
 	if(requiredResult != requiredCondition){
 		showProcessResult("The object :"+name+" does not have the right input type. " + typeResult + " is different from " + typeCondition);
+		errors = true;
 	}
-	if(typeResult == typeCondition && labelResult == labelCondition && requiredResult == requiredCondition){
+	if(!errors){
 		console.log("Form fields passed");
-		return true;
 	}
+	return !errors;
+}
+
+function checkLinkExists(target){
+	links = document.querySelectorAll("a");
+	for (let index = 0; index < links.length; index++) {
+		const link = links[index];
+		if(link.getAttribute("href") == target){
+			return true;
+		}
+	}
+	showProcessResult("Link with href='"+target+"' not found.")
+	return false;
+}
+
+function checkButtonContent(target){
+	let buttons = document.querySelectorAll("button");
+	for (let index = 0; index < buttons.length; index++) {
+		const button = buttons[index];
+		if(button.textContent == target){
+			return true;
+		}
+	}
+	showProcessResult("Button with text='"+target+"' not found.")
+	return false;
 }
