@@ -16,7 +16,7 @@ function testForm(id){
 function searchForm(id){
 	let formQuery = document.querySelector(id);
 	if(formQuery){
-		return searchForm;
+		return formQuery;
 	}
 	else
 	{

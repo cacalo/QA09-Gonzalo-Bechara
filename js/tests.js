@@ -24,16 +24,13 @@ function checkFormsFields(form,name,typeCondition,labelCondition,requiredConditi
 	let labelResult;
 	let requiredResult;
 	let errors = false;
-	//items = document.querySelectorAll(form.ID+" .form-item");
-	items = document.querySelectorAll("form .form-item");
+	items = document.querySelectorAll(form.id+ ".form-item");
 	//For every form item there is
 	for (let index = 0; index < items.length; index++) {
 		const item = items[index];
 		//For every object inside a form item div
 		for (let index = 0; index < item.childElementCount; index++) {
 			const element = item.children[index];
-			console.log(element)
-			console.log(name)
 			if(element.nodeName == "LABEL" && element.getAttribute("for") == name){
 				labelResult = true;
 			}
@@ -43,7 +40,6 @@ function checkFormsFields(form,name,typeCondition,labelCondition,requiredConditi
 			}
 		}
 	}
-	console.log(typeResult, typeCondition, labelResult, labelCondition, requiredResult, requiredCondition);
 	if(typeResult != typeCondition){
 		showProcessResult("The object :"+name+" does not have the right input type. " + typeResult + " is different from " + typeCondition);
 		errors = true;
@@ -55,9 +51,6 @@ function checkFormsFields(form,name,typeCondition,labelCondition,requiredConditi
 	if(requiredResult != requiredCondition){
 		showProcessResult("The object :"+name+" does not have the right input type. " + typeResult + " is different from " + typeCondition);
 		errors = true;
-	}
-	if(!errors){
-		console.log("Form fields passed");
 	}
 	return !errors;
 }
