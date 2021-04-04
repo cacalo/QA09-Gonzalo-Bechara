@@ -41,7 +41,8 @@ function checkFormsFields(form,name,typeCondition,labelCondition,requiredConditi
 		}
 	}
 	if(typeResult != typeCondition){
-		showProcessResult("The object :"+name+" does not have the right input type. " + typeResult + " is different from " + typeCondition);
+		showProcessResult("The object :"+name+" does not have the right input type. " + typeResult +
+		" is different from " + typeCondition);
 		errors = true;
 	}
 	if(labelResult != labelCondition){
@@ -49,7 +50,8 @@ function checkFormsFields(form,name,typeCondition,labelCondition,requiredConditi
 		errors = true;
 	}
 	if(requiredResult != requiredCondition){
-		showProcessResult("The object :"+name+" does not have the right input type. " + typeResult + " is different from " + typeCondition);
+		showProcessResult("The object :"+name+" does not have the right input type. " + typeResult +
+		" is different from " + typeCondition);
 		errors = true;
 	}
 	return !errors;

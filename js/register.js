@@ -8,7 +8,8 @@ function testForm(id){
 	test6 = checkLinkExists("login.html");
 	test7 = checkButtonContent("Clear");
 	test8 = checkButtonContent("Register");
-	if(test1 == true && test2 == true && test3 == true && test4==true && test5==true && test6==true && test7==true && test8==true){
+	if(test1 == true && test2 == true && test3 == true && test4==true && test5==true && test6==true && test7==true &&
+		test8==true){
 		showProcessResult("Validations results: Every validation has passed.",true);
 	}
 }
