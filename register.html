@@ -17,23 +17,28 @@
 						<div class="form-item">
 							<label for="email">Email</label>
 							<input type="email" placeholder="Enter Email" name="email" id="email" required>
+							<div class="input-error alert-hidden">Please write a valid email address</div>
 						</div>
 						<div class="form-item">
-							<label for="name">Full Name</label>
+							<label for="name">Full name</label>
 							<input type="text" placeholder="Enter Full Name" name="name" id="name" required>
+							<div class="input-error alert-hidden">Please write a valid name and surname</div>
 						</div>
 						<div class="form-item">
 							<label for="psw">Password</label>
 							<input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+							<div class="input-error alert-hidden">
+								Your password must use only letters and numbers and it must be at least 8 characters long.</div>
 						</div>
 						<div class="form-item">
-							<label for="psw-2">Password</label>
-							<input type="password" placeholder="Confirm Password" name="psw-2" id="psw-2" required>
+							<label for="psw2">Repeat password</label>
+							<input type="password" placeholder="Confirm Password" name="psw2" id="psw2" required>
+							<div class="input-error alert-hidden">Both passwords must match.</div>
 						</div>
 					</div>
 					<div class="center">
 						<button type="reset">Clear</button>
-						<button type="submit">Register</button>
+						<button type="submit" id="submit" class="button-disabled">Register</button>
 					</div>
 				</form>
 				<p>Already have an account? <a href="login.html">Log in</a></p>
@@ -41,8 +46,8 @@
 			</div>
 		</div>
 		<script src="./js/alertBox.js"></script>
+		<script src="./js/validateInput.js"></script>
 		<script src="./js/tests.js"></script>
 		<script src="./js/register.js"></script>
-		<script src="./js/validateInput.js"></script>
 	</body>
 </html>

@@ -36,7 +36,7 @@ async function fetchAsync (url) {
 testForm("form");
 addValidationsForm();
 
-document.querySelector("#loginSubmit").addEventListener("click", function (e){
+document.querySelector("#submit").addEventListener("click", function (e){
 	e.preventDefault();
 	if(!e.target.classList.contains("button-disabled")){
 		console.log("Botón cickeado y desbloqueado");
@@ -47,6 +47,6 @@ document.querySelector("#loginSubmit").addEventListener("click", function (e){
 		const http = new XMLHttpRequest();
 		http.open("GET", "https://jsonplaceholder.typicode.com/users?email="+document.querySelector("#email").value);
 		http.send();
-		http.onload = () => showProcessResult(http.responseText);
+		http.onload = () => showProcessResult(http.responseText,true);
 	}
 })

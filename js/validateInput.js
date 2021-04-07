@@ -1,6 +1,8 @@
 let blockedFields = {
-  email: true,
-  psw: true,
+  email: false,
+  psw: false,
+  name: false,
+  psw2: false,
 };
 
 function validateEmail(e){
@@ -39,6 +41,41 @@ function validatePassword(e){
   checkAllFields()
 }
 
+function validateName(e){
+  if(e.target.value.length > 7){
+    const re =  /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/i;
+    if(!re.test(e.target.value)){
+      showValidationError(e.target)
+      blockedFields.psw = true;
+    }
+    else{
+      blockedFields.psw = false;
+    }
+  } else if (e.target.value.length > 0){
+    showValidationError(e.target)
+    blockedFields.psw = true;
+  } else if (e.target.value.length == 0){
+    blockedFields.psw = true;
+  }
+  checkAllFields()
+}
+
+function validatePassword2(e){
+  console.log(e.target.value + " vs " + document.querySelector("#psw").value);
+  if(e.target.value == document.querySelector("#psw").value){
+      blockedFields.psw2 = false;
+  } else {
+    showValidationError(e.target)
+    blockedFields.psw2 = true;
+  }
+  if (e.target.value.length == 0){
+    hideValidationError(e);
+  }
+  checkAllFields()
+}
+
+
+
 function hideValidationError(e){
   error = e.target.parentElement.querySelector(".alert-block");
   if(error){
@@ -67,10 +104,10 @@ function checkAllFields(){
     }
   if (result == true){
     console.log("Bloqueando botón")
-    blockButton("loginSubmit")
+    blockButton("submit")
   } else {
     console.log("Desbloqueando botón")
-    unblockButton("loginSubmit")
+    unblockButton("submit")
   }
 }
 

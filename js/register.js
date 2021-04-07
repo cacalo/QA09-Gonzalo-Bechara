@@ -4,7 +4,7 @@ function testForm(id){
 	test2 = checkFormsFields(form,"email","email",true,true);
   test3 = checkFormsFields(form,"name","text",true,true);
 	test4 = checkFormsFields(form,"psw","password",true,true);
-  test5 = checkFormsFields(form,"psw-2","password",true,true);
+  test5 = checkFormsFields(form,"psw2","password",true,true);
 	test6 = checkLinkExists("login.html");
 	test7 = checkButtonContent("Clear");
 	test8 = checkButtonContent("Register");
@@ -22,5 +22,40 @@ function searchForm(id){
 	}
 }
 
+function addValidationsForm(){
+	document.querySelector("#email").addEventListener("focus",hideValidationError);
+	document.querySelector("#email").addEventListener("blur",validateEmail);
+	document.querySelector("#name").addEventListener("focus",hideValidationError);
+	document.querySelector("#name").addEventListener("blur",validateName);
+	document.querySelector("#psw").addEventListener("focus",hideValidationError);
+	document.querySelector("#psw").addEventListener("blur",validatePassword);
+	document.querySelector("#psw2").addEventListener("focus",hideValidationError);
+	document.querySelector("#psw2").addEventListener("blur",validatePassword2);
+}
+
+async function fetchAsync (url) {
+	let response = await fetch(url);
+	let data = await response.json();
+	return data;
+}
+
 //Execution starts
 testForm("form");
+addValidationsForm();
+
+document.querySelector("#submit").addEventListener("click", function (e){
+	e.preventDefault();
+	if(!e.target.classList.contains("button-disabled")){
+		console.log("Botón cickeado y desbloqueado");
+		showProcessResult();
+		showProcessResult("Username: " + document.querySelector("#email").value,true);
+		showProcessResult("Full Name: " + document.querySelector("#name").value,true);
+		showProcessResult("Password: " + document.querySelector("#psw").value,true);
+		showProcessResult("Password repeat: " + document.querySelector("#psw2").value,true);
+		result = fetchAsync("https://jsonplaceholder.typicode.com/users?email="+document.querySelector("#email").value);
+		const http = new XMLHttpRequest();
+		http.open("GET", "https://jsonplaceholder.typicode.com/users?email="+document.querySelector("#email").value);
+		http.send();
+		http.onload = () => showProcessResult(http.responseText);
+	}
+})
