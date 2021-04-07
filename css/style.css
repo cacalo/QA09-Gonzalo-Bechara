@@ -5,6 +5,7 @@
 	max-width: 80%;
 	margin:auto;
 }
+
 .form-box{
 	margin-top: 5%;
 	margin: 5% auto 0 auto;
@@ -27,12 +28,20 @@ h1{
 	display:flex;
 	justify-content:space-between;
 }
+
 .center{
 	display:flex;
 	justify-content:space-around;
 }
+
 input{
 	margin: 0px 15px;
+}
+
+.input-error{
+	border: 2px solid #A55;
+	background-color: #A99;
+	margin: 5;
 }
 
 button{
@@ -41,6 +50,7 @@ button{
 	font-weight: 700;
 	font-family: 'Courier New', Courier, monospace;
 }
+
 .button-disabled{
 	background-color: #aaa;
 	color:#555;
@@ -52,15 +62,19 @@ button{
 	padding: 10px 20px;
 	border: 2px solid #555;
 }
+
 .alert-hidden{
 	display: none;
 }
+
 .alert-block{
 	display: block;
 }
+
 .alert-valid{
 	background-color: #cfc;
 }
+
 .alert-invalid{
 	background-color: #fcc;
 }

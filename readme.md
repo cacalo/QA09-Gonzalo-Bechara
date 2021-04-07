@@ -1,5 +1,5 @@
 # QA09: Form checking excercise - by Gonzalo Bechara
-This excercise is comprised by two HTML files with webpages, two CSS for style and a few .js files with some functionality.
+This exercise is comprised by two HTML files with webpages, two CSS for style and a few .js files with some functionality.
 The objective is to test that each site has the right components in it.
 
 ## Project .js composition

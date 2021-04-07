@@ -8,8 +8,7 @@ function testForm(id){
 	test6 = checkLinkExists("login.html");
 	test7 = checkButtonContent("Clear");
 	test8 = checkButtonContent("Register");
-	if(test1 == true && test2 == true && test3 == true && test4==true && test5==true && test6==true && test7==true &&
-		test8==true){
+	if(test1 && test2 && test3 && test4 && test5 && test6 && test7 &&test8){
 		showProcessResult("Validations results: Every validation has passed.",true);
 	}
 }
@@ -18,12 +17,10 @@ function searchForm(id){
 	let formQuery = document.querySelector(id);
 	if(formQuery){
 		return formQuery;
-	}
-	else
-	{
+	} else {
 		showProcessResult("Searched form not found");
 	}
 }
 
-//Excecution starts
+//Execution starts
 testForm("form");

@@ -13,8 +13,7 @@ function verifyCountFormsFields(form,target){
 	if(result != target){
 		showProcessResult("The number of counted fields: "+ result + ", is different from the expected result: "+target+".")
 		return false;
-	}
-	else{
+	}	else {
 		return true;
 	}
 }
