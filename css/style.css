@@ -27,6 +27,7 @@ h1{
 	padding-top: 20px;
 	display:flex;
 	justify-content:space-between;
+	align-items: center;
 }
 
 .center{
@@ -39,9 +40,10 @@ input{
 }
 
 .input-error{
+	flex-direction: column;
 	border: 2px solid #A55;
 	background-color: #A99;
-	margin: 5;
+	padding: 5px 15px;
 }
 
 button{
@@ -64,7 +66,7 @@ button{
 }
 
 .alert-hidden{
-	display: none;
+	display:none;
 }
 
 .alert-block{

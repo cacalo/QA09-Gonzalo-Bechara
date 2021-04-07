@@ -74,8 +74,6 @@ function validatePassword2(e){
   checkAllFields()
 }
 
-
-
 function hideValidationError(e){
   error = e.target.parentElement.querySelector(".alert-block");
   if(error){
