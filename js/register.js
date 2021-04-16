@@ -43,10 +43,11 @@ async function fetchAsync (url) {
 testForm("form");
 addValidationsForm();
 
+/*
+Old Event listener for register button
 document.querySelector("#submit").addEventListener("click", function (e){
 	e.preventDefault();
 	if(!e.target.classList.contains("button-disabled")){
-		console.log("Botón cickeado y desbloqueado");
 		showProcessResult();
 		showProcessResult("Username: " + document.querySelector("#email").value,true);
 		showProcessResult("Full Name: " + document.querySelector("#name").value,true);
@@ -57,5 +58,25 @@ document.querySelector("#submit").addEventListener("click", function (e){
 		http.open("GET", "https://jsonplaceholder.typicode.com/users?email="+document.querySelector("#email").value);
 		http.send();
 		http.onload = () => showProcessResult(http.responseText);
+	}
+})
+*/
+document.querySelector("#submit").addEventListener("click", function (e){
+	e.preventDefault();
+	if(!e.target.classList.contains("button-disabled")){
+		showProcessResult();
+		showProcessResult("Username: " + document.querySelector("#email").value,true);
+		showProcessResult("Full Name: " + document.querySelector("#name").value,true);
+		showProcessResult("Password: " + document.querySelector("#psw").value,true);
+		showProcessResult("Password repeat: " + document.querySelector("#psw2").value,true);
+		result = fetchAsync("https://jsonplaceholder.typicode.com/users?email="+document.querySelector("#email").value);
+		const http = new XMLHttpRequest();
+		//http.open("POST", "http://localhost:4000/register?email:" + document.querySelector("#email").value);
+		//http.send();
+		//http.onload = () => showProcessResult(http.responseText);
+		fetch("http://localhost:4000/register?email=" + document.querySelector("#email").value +
+		"&name=" + document.querySelector("#name").value +
+		"&password="+ document.querySelector("#psw").value
+		,{method: "post", mode: "no-cors"})
 	}
 })

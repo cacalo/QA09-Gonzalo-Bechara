@@ -10,7 +10,7 @@ function validateEmail(e){
     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(!re.test(e.target.value)){
       showValidationError(e.target);
-      console.log(typeof(blockedFields));
+      //console.log(typeof(blockedFields));
       blockedFields.email = true;
     } else {
       blockedFields.email = false;
@@ -61,7 +61,7 @@ function validateName(e){
 }
 
 function validatePassword2(e){
-  console.log(e.target.value + " vs " + document.querySelector("#psw").value);
+  //console.log(e.target.value + " vs " + document.querySelector("#psw").value);
   if(e.target.value == document.querySelector("#psw").value){
       blockedFields.psw2 = false;
   } else {
@@ -91,7 +91,7 @@ function showValidationError(target){
 }
 
 function checkAllFields(){
-  console.log(blockedFields);
+  //console.log(blockedFields);
   //Check if every key has a false value
   var result = false;
   for (var field in blockedFields) {
@@ -101,10 +101,10 @@ function checkAllFields(){
       }
     }
   if (result == true){
-    console.log("Bloqueando botón")
+    //console.log("Bloqueando botón")
     blockButton("submit")
   } else {
-    console.log("Desbloqueando botón")
+    //console.log("Desbloqueando botón")
     unblockButton("submit")
   }
 }

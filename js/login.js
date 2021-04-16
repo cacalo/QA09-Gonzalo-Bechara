@@ -36,10 +36,11 @@ async function fetchAsync (url) {
 testForm("form");
 addValidationsForm();
 
+/*
 document.querySelector("#submit").addEventListener("click", function (e){
 	e.preventDefault();
 	if(!e.target.classList.contains("button-disabled")){
-		console.log("Botón cickeado y desbloqueado");
+		//console.log("Botón clickeado y desbloqueado");
 		showProcessResult();
 		showProcessResult("Username: " + document.querySelector("#email").value,true);
 		showProcessResult("Password: " + document.querySelector("#psw").value,true);
@@ -48,5 +49,19 @@ document.querySelector("#submit").addEventListener("click", function (e){
 		http.open("GET", "https://jsonplaceholder.typicode.com/users?email="+document.querySelector("#email").value);
 		http.send();
 		http.onload = () => showProcessResult(http.responseText,true);
+	}
+})
+*/
+document.querySelector("#submit").addEventListener("click", function (e){
+	e.preventDefault();
+	if(!e.target.classList.contains("button-disabled")){
+		showProcessResult();
+		showProcessResult("Username: " + document.querySelector("#email").value,true);
+		showProcessResult("Password: " + document.querySelector("#psw").value,true);
+		result = fetchAsync("https://jsonplaceholder.typicode.com/users?email="+document.querySelector("#email").value);
+		const http = new XMLHttpRequest();
+		fetch("http://localhost:4000/login?email=" + document.querySelector("#email").value +
+		"&password="+ document.querySelector("#psw").value
+		,{method: "get", mode: "no-cors"})
 	}
 })
