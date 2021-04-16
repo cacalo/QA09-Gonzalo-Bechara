@@ -62,6 +62,6 @@ document.querySelector("#submit").addEventListener("click", function (e){
 		const http = new XMLHttpRequest();
 		fetch("http://localhost:4000/login?email=" + document.querySelector("#email").value +
 		"&password="+ document.querySelector("#psw").value
-		,{method: "get", mode: "no-cors"})
+		,{method: "get"})
 	}
 })
