@@ -83,7 +83,7 @@ function hideValidationError(e){
 }
 
 function showValidationError(target){
-  error = target.parentElement.querySelector(".alert-hidden");
+  error = target.parentElement.parentElement.querySelector(".alert-hidden");
   if(error){
     error.classList.remove("alert-hidden");
     error.classList.add("alert-block");

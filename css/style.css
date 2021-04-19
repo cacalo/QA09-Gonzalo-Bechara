@@ -43,6 +43,7 @@ input{
 	flex-direction: column;
 	border: 2px solid #A55;
 	background-color: #A99;
+	margin-top: 10px;
 	padding: 5px 15px;
 }
 
