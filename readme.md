@@ -8,3 +8,7 @@ I separated the functionality of the tests in 3 different files:
 * **tests.js**: Holds the engine for the tests to occur.
 * **validateinputs.js**: Contains functions to validate that each field is filled within each page before being able to submit the form.
 * **login.js / register.js**: Call the tests each site is designed to do.
+
+# QA14: Web automation tests update
+A new testing module has been added to the project. It can be run by executing "npm run test".
+A set of three tests for each page were created.
