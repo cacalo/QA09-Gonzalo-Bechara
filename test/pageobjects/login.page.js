@@ -5,8 +5,8 @@ class LoginPage extends Page {
 	get inputPassword () { return $("#psw")}
 	get btnSubmit () { return $('button[type="submit"]')}
 	get alertBox() { return $("#form-result")}
-	get emailErr () { return $("body > div > div > form > div:nth-child(1) > div.input-error")}
-	get passwordErr () { return $("body > div > div > form > div:nth-child(2) > div.input-error")}
+	get emailError () { return $("body > div > div > form > div:nth-child(1) > div.input-error")}
+	get passwordError () { return $("body > div > div > form > div:nth-child(2) > div.input-error")}
 
 	//Test credentials
 	get incorrectUsername () { return "asdqwezxc@gmail.com"}

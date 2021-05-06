@@ -4,7 +4,7 @@
   "description": "This exercise is comprised by two HTML files with webpages, two CSS for style and a few .js files with some functionality.\r The objective is to test that each site has the right components in it and to validate all the fields entered by de user.",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio run ./wdio.conf.js --spec ./test/specs/login-tests.js"
+    "test": "npx wdio run ./wdio.conf.js --spec ./test/specs/register-tests.js"
   },
   "repository": {
     "type": "git",
